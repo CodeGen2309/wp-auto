@@ -1,0 +1,414 @@
+  .bullet {
+  position: relative;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  height: 95vh;
+}
+
+.bullet__img {
+  position: absolute;
+  width: 100%; height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.bullet__cover {
+  position: absolute;
+  width: 100%; height: 100%;
+
+  background: rgba(0, 0, 0, .2);
+  backdrop-filter: blur(3px);
+}
+
+.bullet__title {
+  position: relative;
+  color: white;
+  font-size: 60px;
+  padding: 0; margin: 0;
+  text-align: center;
+}
+
+.bullet__footNote {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin: 0;
+  padding: 20px;
+}
+
+
+.bullet__search {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+
+  width: 500px;
+  max-width: 100%;
+
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 30px auto;
+}
+
+
+.bullet__searchInput {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 100;
+  padding: 10px 0;
+}
+
+
+.bullet__searchIcon {
+  width: 20px;
+  padding: 15px 20px;
+  opacity: .3;
+}
+
+
+.bullet__logo {
+  position: absolute;
+  height: 30vh;
+  top: 20px;
+  z-index: 999;
+}
+
+
+
+/* О компании */
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  gap: 30px;
+
+  color: white;
+  margin: 80px 20px;
+}
+
+.about__logo {
+  object-fit: contain;
+  object-position: center;
+  width: 10px;
+  flex-grow: 1;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  max-width: 50%;
+}
+
+.about__title {
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin: 0; padding: 0;
+  text-align: center;
+}
+
+
+.about__footnote {
+  font-weight: 100;
+  text-align: center;
+  margin: 20px 0; padding: 0;
+  font-size: 14px;
+}
+
+.about__divider {
+  width: 100px;
+  border: 1px solid #259da8;
+}
+
+.about__desc {
+  text-align: center;
+  font-weight: 300;
+  line-height: 3rem;
+  font-size: 18px;
+}
+
+
+/* Наши услуги */
+.services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: white;
+  padding: 40px 0;
+}
+
+.services__header {
+  font-size: 52px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0; padding: 0;
+}
+
+.services__footNote {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 2rem;
+  letter-spacing: 3px;
+  margin: 60px;
+}
+
+.services__list {
+  max-width: 80%;
+  margin: auto;
+}
+
+.services__listItem {
+  display: flex;
+}
+
+.services__listItem_reverse {
+  flex-direction: row-reverse;
+}
+
+.services__image {
+  object-fit: cover;
+  object-position: center;
+  width: 50%;
+}
+
+.services__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  
+  flex-grow: 1;
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 40px;
+}
+
+.services__title {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0; padding: 0;
+}
+
+.services__descript {
+  font-size: 16px;
+  font-weight: 100;
+  margin: 0; padding: 0;
+  line-height: 2rem;
+  letter-spacing: 1px;
+}
+
+
+/* ПОЧЕМУ ЖЕ МЫ? */
+
+.advant {
+  padding: 40px;
+  background: #061b1f;
+  color: white;
+}
+
+.advant__title {
+  font-size: 52px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0; padding: 0;
+}
+
+.advant__footNote {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 2rem;
+  letter-spacing: 3px;
+  margin: 0; padding: 0;
+}
+
+.advant__list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0; padding: 100px 0;
+}
+
+.advant__listItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 30%;
+}
+
+.advant__listImg {
+  width: 100px;
+}
+
+.advant__listTitle {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0; padding: 0;
+}
+
+.advant__listNote {
+  text-align: center;
+  margin: 0; padding: 0;
+  font-weight: 300;
+}
+
+
+/* Форма обратного звонка */
+.callBack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  background: #061b1f;
+  color: white;
+  padding: 100px 0;
+}
+
+.callBack__title {
+  font-size: 52px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0; padding: 0;
+}
+
+.callBack__note {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 2rem;
+  letter-spacing: 3px;
+  margin: 0; padding: 0;
+}
+
+.callBack__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.callBack__labelName {
+  width: 600px;
+  max-width: 100%;
+  /* margin: 40px; */
+  box-sizing: border-box;
+}
+
+.callBack__input {
+  width: 100%;
+  padding: 20px 0;
+
+  background: inherit;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  transition: .3s;
+
+}
+
+.callBack__input:focus {
+  border-bottom: 1px solid rgba(255, 255, 255, .8);
+}
+
+
+.callBack__name {}
+.callBack__phone {}
+.callBack__message {}
+
+.callback__action {
+  border: none;
+  background: #259da8;
+  color: white;
+  font-size: 16px;
+  padding: 20px 40px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.callback__action:hover {
+  background: #32cad8;
+}
+
+
+@media (max-width: 500px) {
+  .about__logo {
+    display: none;
+  }
+
+  .about__title {
+    font-size: 34px;
+  }
+
+  .about__content {
+  flex-grow: 1;
+  max-width: max-content;
+  }
+
+  .bullet__search {
+    max-width: 100%;
+    margin: 0 20px;
+  }
+
+  .services__list {
+    padding: 0; margin: 0;
+    min-width: 100%;
+  }
+
+  .services__listItem {
+    flex-wrap: wrap;
+  }
+
+  .services__title {
+    font-size: 24px;
+  }
+
+  .services__image {
+    height: 40vh;
+    flex-grow: 1;
+  }
+
+  .services__header {
+    font-size: 30px;
+  }
+
+  .services__footNote {
+    font-size: 14px;
+    margin: 20px 16px;
+  }
+
+  .advant__list {
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+  }
+
+  .callBack {
+    padding: 40px;
+  }
+
+  .callBack__form {
+    width: 100%;
+  }
+}

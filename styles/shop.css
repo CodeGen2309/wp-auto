@@ -1,0 +1,261 @@
+.market__bullet {}
+
+.mBlt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+  position: relative;
+  height: 90vh;
+  background-attachment: fixed;
+  padding: 0 20px;
+}
+
+.mBlt__filter {
+  position: absolute;
+  background: rgba(8, 29, 31, .8);
+  inset: 0 0 0 0;
+}
+
+.mBlt__title {
+  font-size: 70px;
+  color: white;
+  position: relative;
+  padding: 0; margin: 0;
+  text-align: center;
+}
+
+.mBlt__desc {
+  padding: 0; margin: 0;
+  color: white;
+  position: relative;
+  font-size: 20px;
+  text-align: center;
+}
+
+.mBlt__search {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+
+  width: 500px;
+  max-width: 100%;
+
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.mBlt__searchIcon {
+  width: 20px;
+  padding: 15px 20px;
+  opacity: .3;
+}
+
+
+.mBlt__searchInput {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 100;
+  padding: 10px 0;
+}
+
+
+/* Разделы магазина */
+
+.market__brands {}
+
+.mBnd {
+  min-height: 100vh;
+  background: #061b1f;
+  color: white;
+}
+
+.mBnd__title {
+  font-size: 40px;
+  font-weight: 300;
+
+  text-align: center;
+  margin: 0;
+  padding: 100px 0 0 0;
+}
+
+.mBnd__desc {
+  font-weight: 100;
+  font-size: 20px;
+  text-align: center;
+  margin: 80px 0;
+}
+
+.mBnd__brandList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mBnd__brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+  position: relative;
+  width: 40%; height: 250px;
+  box-sizing: border-box;
+  margin: 10px;
+  opacity: 0;
+
+  transition: .3s;
+  cursor: pointer;
+}
+
+.mBnd__brand:hover {
+  flex-grow: 5;
+}
+
+.mBnd__brand:hover .mBnd__brandFilter {
+  background: rgba(8, 29, 31, .2);
+}
+
+.mBnd__brandImg {
+  position: absolute;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mBnd__brandFilter {
+  position: absolute;
+  width: 100%; height: 100%;
+  background: rgba(8, 29, 31, .4);
+  transition: .3s;
+}
+
+.mBnd__brandTitle {
+  position: absolute;
+  margin: 0; padding: 0;
+  font-size: 30px;
+}
+
+
+/* Наши предложения */
+.market__hotSells {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mHs {
+  height: 100vh;
+  background: #061b1f;
+}
+
+.mHs__title {
+  font-size: 40px;
+  font-weight: 300;
+  color: white;
+  margin: 0; padding: 0;
+  text-align: center;
+}
+
+
+/* Форма подписки */
+.market__callForm {}
+
+.mcf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  background: #061b1f;
+  color: white;
+  padding: 100px 0;
+}
+
+.mcf__title {
+  font-size: 40px;
+  font-weight: 300;
+  color: white;
+  margin: 0; padding: 0;
+  text-align: center;
+}
+
+.mcf__desc {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.mcf__form {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 20px;
+
+  height: 60px;
+  width: 70%;
+}
+
+.mcf__input {
+  flex-grow: 1;
+  outline: none;
+  border: none;
+
+  font-size: 20px;
+  padding: 0 20px;
+  font-weight: 100;
+}
+
+.mcf__button {
+  background: #259da8;
+  color: white; font-weight: 600;
+  border: none; padding: 0 40px;
+  outline: none; cursor: pointer;
+  transition: .3s;
+}
+
+.mcf__button:hover {
+  background: #32cad8;
+}
+
+
+@media (max-width: 500px) {
+  .mBlt__title {
+    font-size: 32px;
+  }
+
+  .mBlt__desc {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .mBlt__search {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mcf {
+    padding: 20px;
+  }
+
+  .mcf__form {
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mcf__input {
+    padding: 20px;
+  }
+
+  .mcf__button {
+    padding: 20px;
+  }
+}

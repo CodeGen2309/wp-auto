@@ -1,0 +1,10 @@
+<?
+  /**
+  * Template Name: Пустая страница
+  * Template Post Type: post, page, product
+  */
+?>
+
+<? wp_head() ?>
+<? the_content() ?>
+<? wp_footer() ?>
