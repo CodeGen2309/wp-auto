@@ -1,4 +1,4 @@
-<?
+<?php
 $themeFolder = get_template_directory_uri();
 $brandFolder = "{$themeFolder}/img/brands";
 $iconsFolder = "{$themeFolder}/icons";
@@ -57,6 +57,31 @@ $brands = [
     </li>
   <? endforeach; ?>
 </ul>
+
+
+<script>
+  let tiles = document.querySelectorAll('.bnd')
+
+
+  document.addEventListener('scroll', ent => {
+    for (let id in tiles) {
+      if (id == 'entries') { return false }
+
+      let rect = tiles[id].getBoundingClientRect()
+      let fadeValue = (rect.y + rect.height) / 150 - 1
+
+      let styles = {}
+
+
+      if ( rect.top < window.innerHeight / 2) {
+        styles.opacity = fadeValue
+      }
+
+      let styleString = ` opacity: ${styles.opacity} `
+      tiles[id].style = styleString
+    }
+  })
+</script>
 
 
 
@@ -139,7 +164,6 @@ $brands = [
 
   50% { 
     height: 60vh;
-    opacity: 1;
   }
 
   100% { height: 30vh; }

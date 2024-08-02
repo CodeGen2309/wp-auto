@@ -213,8 +213,18 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
   Motion.timeline(animLine)
-})
 
+  Motion.scroll((info) => {
+    let logo = document.querySelector('.bullet__logo')
+    let logoRect = logo.getBoundingClientRect()
+    
+    let scrollFade = 1 - window.scrollY / 200
+    let fadeValue = scrollFade || 1 
+
+    logo.style = `opacity: ${fadeValue} `
+    // console.log(logoRect);
+  })
+})
 
 </script>
 

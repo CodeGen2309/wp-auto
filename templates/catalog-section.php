@@ -6,64 +6,32 @@
 ?>
 
 <? 
-  $imagesFolder = get_template_directory_uri(). '/images';
+  $imgFolder = get_template_directory_uri(). '/img';
+  $iconsFolder = get_template_directory_uri(). '/icons';
   $sectoinsList = get_categories(['parent' => 19, 'hide_empty' => false]);
 
 ?>
 
 <? get_header() ?>
 
+<section class="bullet">
+	<img src="<?= $imgFolder ?>/bullet.jpg" class="bullet__img">
+	<div class="bullet__cover"></div>
+	
+  <!-- <img class="bullet__logo" src="<?= $imgFolder ?>/logo.png"> -->
+	<h1 class="bullet__title">AutoSfera</h1>
+	<p class="bullet__footNote">
+		Онлайн-магазин автозапчастей и товаров для наших верных друзей.
+	</p>
 
-<section class="bkCatalog">
-  <h2 class="bkCatalog__header"><?= $post -> post_title ?></h2>
-
-  <div class="bkCatalog__sideHolder">
-    <? wp_nav_menu([
-      'theme_location' => 'sidemenu',
-      'menu_class' => 'bkSideMenu',
-    ]) ?>
-  </div>
-
-  <div class="bkCatalog__content">
-    <? the_content() ?>
-  </div>
+  <!-- <label class="bullet__search">
+    <img class="bullet__searchIcon" src="<?= $iconsFolder ?>/search.png">
+    <input type="text" class="bullet__searchInput">
+  </label> -->
 </section>
 
-<style>
-.bkCatalog {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  max-width: 1175px;
-  margin: 40px auto;
-  grid-gap: 10px;
-}
-
-.bkCatalog__header {
-  grid-column: span 2;
-  text-align: center;
-  font-weight: 300;
-  font-size: 31px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(170, 165, 136, .6);
-  margin: 20px 0;
-}
-
-.bkCatalog__sideHolder {
-  height: 300px;
-}
-
-.bkCatalog__sideBar {
-  padding: 20px;
-  margin: 30px 0;
-  box-sizing: border-box;
-}
-
-.bkCatalog__content {
-  min-height: 100vh;
-}
 
 
-.bkKatalog__item {}
-</style>
+<h1>TEEEEST</h1>
 
 <? get_footer() ?>
