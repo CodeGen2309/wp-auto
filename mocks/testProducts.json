@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Крутой товар",
+    "price": 124,
+    "image": "img/products/1.jpg"
+  },
+  
+  {
+    "title": "Крутой товар",
+    "price": 175,
+    "image": "img/products/2.jpg"
+  },
+  
+  {
+    "title": "Крутой товар",
+    "price": 843,
+    "image": "img/products/3.jpg"
+  },
+  
+  {
+    "title": "Крутой товар",
+    "price": 952,
+    "image": "img/products/4.jpg"
+  },
+  
+  {
+    "title": "Крутой товар",
+    "price": 742,
+    "image": "img/products/5.jpg"
+  },
+  
+  {
+    "title": "Крутой товар",
+    "price": 623,
+    "image": "img/products/6.jpg"
+  },
+  
+  {
+    "title": "Крутой товар",
+    "price": 2357,
+    "image": "img/products/7.jpg"
+  },
+  
+  {
+    "title": "Крутой товар",
+    "price": 6534,
+    "image": "img/products/8.jpg"
+  },
+  
+  {
+    "title": "Крутой товар",
+    "price": 543,
+    "image": "img/products/9.jpg"
+  },
+  
+  {
+    "title": "Крутой товар",
+    "price": 115,
+    "image": "img/products/10.jpg"
+  }
+]

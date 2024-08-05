@@ -29,7 +29,7 @@
   </div>
 
   <label class="mBlt__search">
-    <img class="mBlt__searchIcon" src="{{ $iconsFolder }}/search.png">
+    <img class="mBlt__searchIcon" src="<?= $iconsFolder ?>/search.png">
     <input type="text" class="mBlt__searchInput">
   </label>
   
@@ -39,7 +39,7 @@
 
 
 <section class="market__hotSells mHs">
-<? get_template_part('/parts/hots')?>
+  <? get_template_part('/parts/hots')?>
 </section>
 
 <section class="market__callForm mcf">

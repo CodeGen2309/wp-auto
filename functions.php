@@ -33,10 +33,12 @@ class autosfera {
     wp_register_style('asf-base', "{$folder}/styles/base.css");
     wp_register_style('asf-main', "{$folder}/styles/main.css");
     wp_register_style('asf-shop', "{$folder}/styles/shop.css");
+    wp_register_style('asf-font', "{$folder}/fonts/roboto.css");
 
     wp_enqueue_style('asf-base');
     wp_enqueue_style('asf-main');
     wp_enqueue_style('asf-shop');
+    wp_enqueue_style('asf-font');
   }
 
 }

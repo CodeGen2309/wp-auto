@@ -2,192 +2,154 @@
 $themeFolder = get_template_directory_uri();
 $iconsFolder = "{$themeFolder}/icons";
 
-$coolTitle = "";
+$title = [
+  'text'  => 'Масла',
+  'class' => 'hots__titleText',
+  'step'  => 5,
+  'onhover' => false,
+];
+
+
+$productsFile = file_get_contents("{$themeFolder}/mocks/testProducts.json");
+$products = json_decode($productsFile);
+
 ?>
 
-
 <section class='hots'>
-  <div class='ctitle'>
-    <div class="ctitle__decor ctitle__decor_one"></div>
-    <div class="ctitle__decor ctitle__decor_two"></div>
-    <div class="ctitle__decor ctitle__decor_tree"></div>
-    <div class="ctitle__decor ctitle__decor_fore"></div>
-    
-    <h3 class='ctitle__text'>Косметика</h3>
+  <div class="hots__title">
+    <? get_template_part('/parts/coolTitle', null, $title)?>
   </div>
+
+  <ul class="hots__list">
+    <? foreach ($products as $item): ?>
+      <?
+        $img = "{$themeFolder}/{$item -> image}";
+        $title = $item -> title;
+        $price = $item -> price;
+      ?>
+
+      <li class="hots__listItem">
+        <div class="hots__listCover">
+          <img class="hots__listImg" src="<?= $img ?>">
+          <p class="hots__listPrice"><?= $price ?>₽</p>  
+        </div>
+        <p class="hots__listTitle"><?= $title ?></p>
+        <a class="hots__listBuy" href="#">В корзину</a>
+      </li>
+    <? endforeach; ?>
+  </ul>
+
 </section>
 
 
 <style>
 .hots {
-  padding: 40px;
+  padding: 60px 0;
   width: 100%;
-}
-
-.ctitle {
-  position: relative;
-  margin: 0; padding: 0;
-  width: 500px;
-  overflow: hidden;
-
-  display: flex;
-  transition: .7s
-}
-
-
-
-.ctitle:hover .ctitle__decor_one  { width: 70%; }
-.ctitle:hover .ctitle__decor_two  { width: 100%; }
-.ctitle:hover .ctitle__decor_tree { width: 130%; }
-.ctitle:hover .ctitle__decor_fore { width: 150%; }
-
-
-.ctitle__text {
   color: white;
-  font-weight: 200;
-  justify-self: center;
-  align-self: center;
-  position: relative;
-
-  margin: 0; padding: 10px 30px;
-  transition: .5s
 }
 
-.ctitle__decor {
-  position: absolute;
-  top: 0; left: 0;
-  height: 100%;
-
-  background: rgba(34, 124, 133, .2);
-  transform: skewX(60deg) translateX(-25%);
-  transition: .5s
+.hots__title {
 }
 
-.ctitle__decor_one {
-  width: 60%;
+.hots__titleText {
+  padding: 15px 30px;
+  font-size: 30px;
+  font-weight: 300;
 }
 
-.ctitle__decor_two {
-  width: 70%;
-}
-
-.ctitle__decor_tree {
-  width: 80%;
-}
-
-.ctitle__decor_fore {
-  width: 90%;
-}
-</style>
-
-
-
-<script>
-  // document.addEventListener('scroll', ent => {
-  document.addEventListener('falseEvent', ent => {
-    for (let id in tiles) {
-      if (id == 'entries') { return false }
-
-      let rect = tiles[id].getBoundingClientRect()
-      let fadeValue = (rect.y + rect.height) / 150 - 1
-
-      let styles = {}
-
-
-      if ( rect.top < window.innerHeight / 2) {
-        styles.opacity = fadeValue
-      }
-
-      let styleString = ` opacity: ${styles.opacity} `
-      tiles[id].style = styleString
-    }
-  })
-</script>
-
-
-
-<style>
-.brands {}
-
-.brands__list {
+.hots__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 40px;
 
-  margin: 0; padding: 0;
   list-style: none;
+  padding: 40px 20px;
+  margin: 10px auto;
 }
 
-.bnd {
-  position: relative;
-  overflow: hidden;
-  width: 40%;
-  flex-grow: 1;
-
+.hots__listItem {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  position: relative;
 
-  color: white;
-  font-size: 40px;
-
-  height: 40vh;
   transition: .3s;
-  cursor: pointer;
 }
 
-.bnd:hover {
-  flex-grow: 2;
+.hots__listCover {
+  position: relative;
+  width: 200px; height: 250px;
 }
 
-.bnd:hover .bnd__cover {
-  background: rgba(0, 0, 0, .2);
-}
 
-.bnd__image {
-  position: absolute;
+.hots__listImg {
   width: 100%; height: 100%;
-
   object-fit: cover;
   object-position: center;
-  transition: .3s;
+  border-radius: 2px;
 }
 
-.bnd__cover {
+.hots__listPrice {
   position: absolute;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, .4);
+  bottom: 0; right: -10px;
+  padding: 6px 30px;
+  
+
+  margin: 0;
+  color: white;
+  z-index: 9;
   transition: .3s;
 }
 
-.bnd__title {
-  position: relative;
+
+.hots__listPrice::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(34, 124, 133, 1);
+  z-index: -1;
+
+  transform: skewX(40deg);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, .3);
 }
 
-@media (max-width: 500px) {
-  .brands__list {
-    flex-wrap: wrap;
-    /* gap: 10px; */
-  }
 
-  .bnd {
-    width: 100%;
-    animation: bubbleAnim linear both;
-    animation-timeline: view();
-  }
-
-  .bnd__cover {
-  }
+.hots__listTitle {
+  font-size: 21px;
+  font-weight: 100;
 }
 
-@keyframes bubbleAnim {
-  0% { height: 0; }
-
-  50% { 
-    height: 60vh;
-  }
-
-  100% { height: 30vh; }
+.hots__listBuy {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: rgba(34, 124, 133, 1);
+  border-radius: 2px;
+  text-decoration: none;
+  color: inherit;
+  transition: .3s;
 }
 
+.hots__listBuy:hover {
+  background: rgb(47, 177, 189);
+}
+
+
+@media (width > 1300px) {
+  .hots {}
+
+  .hots__list {
+    justify-content: space-around;
+  }
+
+  .hots__listCover {
+    width: 300px;
+    height: 400px;
+  }
+
+  .hots__listBuy {
+    padding: 15px;
+  }
+}
 </style>
