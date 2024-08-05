@@ -6,60 +6,59 @@
 ?>
 
 <? 
-  $themeFolder = get_template_directory_uri();
-  $imgFolder = "{$themeFolder}/img";
-  $iconsFolder = "{$themeFolder}/icons";
+$themeFolder = get_template_directory_uri();
+$imgFolder = "{$themeFolder}/img";
+$iconsFolder = "{$themeFolder}/icons";
 
 
 
-  $services = [
-    [
-      'title' => 'Всегда подберём то, что надо именно вам',
-      'img'=> "{$imgFolder}/services/1.jpg",
-      'cls' => 'services__listItem',
-      'desc' => "
-        Проконсультируем и поможем в выборе необходимых 
-        для вашей машины продуктов. Сориентируем в ценовом 
-        диапазоне и выберем лучший товар по качеству и цене.
-      ",
-    ],
-    [
-      'title' => 'Найдем всё что вам нужно',
-      'img'=> "{$imgFolder}/services/2.jpg",
-      'cls' => 'services__listItem services__listItem_reverse',
-      'desc' => "
-        Имея широчайшую базу продуктов, найдём даже самые редкие и
-      ",
-    ],
-    [
-      'title' => 'Доставим в любую точку России',
-      'img'=> "{$imgFolder}/services/3.jpg",
-      'cls' => 'services__listItem',
-      'desc' => "
-        Сотрудничаем с такими компаниями как 
-        'СДЭК', 'Почта России', 'Boxberry' и т.д.
-      ",
-    ],
-  ];
-  
-  $advants = [
-    [
-      'title' => 'Качество',
-      'desc' => 'Весь закупаемый товар мы проверяем при поступлении на склад сами',
-      'icon' => " {$iconsFolder}/advantages/1.svg",
-    ],
-    [
-      'title' => 'Скорость',
-      'desc' => 'В кратчайшие сроки мы предоставим вам всё, что возможно',
-      'icon' => " {$iconsFolder}/advantages/2.svg",
-    ],
-    [
-      'title' => 'Цена',
-      'desc' => 'Предоставляем самые лучшие цены',
-      'icon' => " {$iconsFolder}/advantages/3.svg",
-    ],
-  ];
-    
+$services = [
+  [
+    'title' => 'Всегда подберём то, что надо именно вам',
+    'img'=> "{$imgFolder}/services/1.jpg",
+    'cls' => 'services__listItem',
+    'desc' => "
+      Проконсультируем и поможем в выборе необходимых 
+      для вашей машины продуктов. Сориентируем в ценовом 
+      диапазоне и выберем лучший товар по качеству и цене.
+    ",
+  ],
+  [
+    'title' => 'Найдем всё что вам нужно',
+    'img'=> "{$imgFolder}/services/2.jpg",
+    'cls' => 'services__listItem services__listItem_reverse',
+    'desc' => "
+      Имея широчайшую базу продуктов, найдём даже самые редкие и
+    ",
+  ],
+  [
+    'title' => 'Доставим в любую точку России',
+    'img'=> "{$imgFolder}/services/3.jpg",
+    'cls' => 'services__listItem',
+    'desc' => "
+      Сотрудничаем с такими компаниями как 
+      'СДЭК', 'Почта России', 'Boxberry' и т.д.
+    ",
+  ],
+];
+
+$advants = [
+  [
+    'title' => 'Качество',
+    'desc' => 'Весь закупаемый товар мы проверяем при поступлении на склад сами',
+    'icon' => " {$iconsFolder}/advantages/1.svg",
+  ],
+  [
+    'title' => 'Скорость',
+    'desc' => 'В кратчайшие сроки мы предоставим вам всё, что возможно',
+    'icon' => " {$iconsFolder}/advantages/2.svg",
+  ],
+  [
+    'title' => 'Цена',
+    'desc' => 'Предоставляем самые лучшие цены',
+    'icon' => " {$iconsFolder}/advantages/3.svg",
+  ],
+];    
 ?>
 
 

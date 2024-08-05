@@ -39,7 +39,7 @@
 
 
 <section class="market__hotSells mHs">
-  <h1 class="mHs__title">Специально для вас</h1>
+<? get_template_part('/parts/hots')?>
 </section>
 
 <section class="market__callForm mcf">
