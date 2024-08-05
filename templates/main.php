@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let logo = document.querySelector('.bullet__logo')
     let logoRect = logo.getBoundingClientRect()
     
-    let scrollFade = 1 - window.scrollY / 200
+    let scrollFade = 1 - window.scrollY / 100
     let fadeValue = scrollFade || 1 
 
     logo.style = `opacity: ${fadeValue} `
