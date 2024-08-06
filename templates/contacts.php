@@ -70,7 +70,7 @@ let init = () => {
 
   let myMap = new ymaps.Map('conts__map', {
     center:[55.68,37.70],
-    zoom:13,
+    zoom:12,
     behaviors:['default', 'scrollZoom']
   });
 
@@ -86,7 +86,7 @@ let init = () => {
     let coords = JSON.parse(string)
 
     item.addEventListener('click', () => {
-      myMap.panTo(coords, {duration: 700, delay: 0})
+      myMap.panTo(coords, {duration: 1000, delay: 0})
     })
   }
 }
@@ -102,8 +102,10 @@ ymaps.ready(init);
   .conts {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 40;
+    align-items: stretch;
+    gap: 40px;
+    padding: 20px;
+    box-sizing: border-box;
 
     padding-top: 120px;
     list-style: none;
@@ -123,21 +125,27 @@ ymaps.ready(init);
     align-items: flex-start;
     justify-content: flex-start;
     gap: 40px;
+    margin: 0; padding: 0;
   }
 
   .conts__label {
     cursor: pointer;
     width: 200px;
     flex-grow: 1;
+    box-sizing: border-box;
 
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, .4);
     padding: 20px 40px;
+    transition: .3s;
+    overflow: hidden;
+  }
+
+  .conts__label:hover {
+    background: rgba(255, 255, 255, .4);
   }
 
   #conts__map {
-    height: 90vh;
-    margin: 40px;
     box-sizing: border-box;
     border-radius: 20px;
     overflow: hidden;
@@ -148,7 +156,7 @@ ymaps.ready(init);
   @media (width < 900px) {
     .conts {
       flex-direction: column-reverse;
-      padding: 40px;
+      /* padding: 40px; */
       padding-top: 100px;
       box-sizing: border-box;
     }
@@ -166,8 +174,8 @@ ymaps.ready(init);
 
     #conts__map {
       width: 100%;
+      height: 80vh;
       box-sizing: border-box;
-      /* min-height: 800px; */
     }
   }
 </style>

@@ -5,7 +5,7 @@ $iconsFolder = "{$themeFolder}/icons";
 $class = isset($args['class'])? $args['class'] : null;
 $text = isset($args['text'])? $args['text'] : 'rapapap';
 $step = isset($args['step'])? $args['step'] : 20;
-$onhover = isset($args['onhover'])? $args['onhover'] : true;
+$onhover = isset($args['onhover'])? $args['onhover'] : false;
 
 ?>
 
@@ -56,7 +56,7 @@ $onhover = isset($args['onhover'])? $args['onhover'] : true;
   top: 0; left: 0;
   height: 100%;
 
-  background: rgba(34, 124, 133, .2);
+  background: rgba(34, 124, 133, .4);
   transform: skewX(60deg) translateX(-25%);
   transition: .5s
 }

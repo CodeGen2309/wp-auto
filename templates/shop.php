@@ -10,6 +10,8 @@
   $imgFolder = "{$themeFolder}/img";
   $iconsFolder = "{$themeFolder}/icons";
 
+  $title = 'Интересные товары';
+
 ?>
 
 
@@ -39,7 +41,10 @@
 
 
 <section class="market__hotSells mHs">
-  <? get_template_part('/parts/hots')?>
+  <? get_template_part(
+    '/parts/hots', null,
+    ['text' => $title]
+  )?>
 </section>
 
 <section class="market__callForm mcf">

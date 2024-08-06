@@ -173,16 +173,30 @@ $advants = [
 
     <button class="callback__action">Оставить заявку</button>
   </form>
+
+
+  <iframe id="acat-frame" src="https://autos.acat.online" width="100%" height="600" scrolling="auto" frameborder="0" allow="clipboard-read; clipboard-write"></iframe>
 </section>
 
 
+<script type="text/javascript">window.addEventListener("message", function(e){try {var data = JSON.parse(e.data);if (data && data.acatFrameHeight) {document.getElementById("acat-frame").style.height = data.acatFrameHeight + "px";}} catch (e) {}}, false);</script>
+
+
+
 <script>
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   let duration = 1
   let delay = '-0.6'
+
+  let frame = document.querySelector('iframe#acat-frame');
+  frame.addEventListener('load', () => {
+    console.log('loaded!');
+    console.log(frame.contentWindow);
+    
+  })
+
+  
+  
 
   let animLine = [
     [

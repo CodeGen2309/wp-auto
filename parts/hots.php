@@ -2,8 +2,11 @@
 $themeFolder = get_template_directory_uri();
 $iconsFolder = "{$themeFolder}/icons";
 
+$text = isset($args['text'])? $args['text'] : 'rapapap';
+
+
 $title = [
-  'text'  => 'Масла',
+  'text'  => $text,
   'class' => 'hots__titleText',
   'step'  => 5,
   'onhover' => false,
@@ -62,7 +65,6 @@ $products = json_decode($productsFile);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
 
   list-style: none;
   padding: 40px 20px;
@@ -73,6 +75,7 @@ $products = json_decode($productsFile);
   display: flex;
   flex-direction: column;
   position: relative;
+  margin: 40px 20px;
 
   transition: .3s;
 }
@@ -150,6 +153,32 @@ $products = json_decode($productsFile);
 
   .hots__listBuy {
     padding: 15px;
+  }
+}
+
+
+@media (width < 700px) {
+  .hots__list {
+    justify-content: center;
+  }
+
+  .hots__listItem {
+    width: 90%;
+    margin: 40px 0; padding: 0;
+  }
+
+  .hots__listCover {
+    width: 100%;
+  }
+
+  .hots__listImg {
+    object-fit: contain;
+    background: white;
+  }
+
+  .hots__listBuy {
+    padding: 20px 10px;
+    text-align: center;
   }
 }
 </style>

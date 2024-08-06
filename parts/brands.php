@@ -5,42 +5,42 @@ $iconsFolder = "{$themeFolder}/icons";
 
 $brands = [
   [
-    'title' => 'BMW', 'link' => '#', 
+    'title' => 'BMW', 'link' => '/brand?brand=bmw', 
     'img' => "{$brandFolder}/bmw.jpg"
   ],
   
   [
-    'title' => 'Mercedes', 'link' => '#', 
+    'title' => 'Mercedes', 'link' => '/brand?brand=mercedes', 
     'img' => "{$brandFolder}/mercedes.jpg"
   ],
   
   [
-    'title' => 'Audi', 'link' => '#', 
+    'title' => 'Audi', 'link' => '/brand?brand=audi', 
     'img' => "{$brandFolder}/audi.jpg"
   ],
   
   [
-    'title' => 'Toyota', 'link' => '#', 
+    'title' => 'Toyota', 'link' => '/brand?brand=toyota', 
     'img' => "{$brandFolder}/toyota.jpg"
   ],
   
   [
-    'title' => 'Hyundai', 'link' => '#', 
+    'title' => 'Hyundai', 'link' => '/brand?brand=hyundai', 
     'img' => "{$brandFolder}/hyundai.jpg"
   ],
   
   [
-    'title' => 'Nissan', 'link' => '#', 
+    'title' => 'Nissan', 'link' => '/brand?brand=nissan', 
     'img' => "{$brandFolder}/nissan.jpg"
   ],
   
   [
-    'title' => 'Porshe', 'link' => '#', 
+    'title' => 'Porshe', 'link' => '/brand?brand=porshe', 
     'img' => "{$brandFolder}/porshe.jpg"
   ],
   
   [
-    'title' => 'KIA', 'link' => '#', 
+    'title' => 'KIA', 'link' => '/brand?brand=kia', 
     'img' => "{$brandFolder}/kia.jpg"
   ]  
 ];
@@ -50,11 +50,11 @@ $brands = [
 
 <ul class="brands__list">
   <? foreach ($brands as $item): ?>
-    <li class="brands__item bnd">
+    <a class="brands__item bnd" href="<?= $item['link'] ?>">
       <img class="bnd__image" src = "<?= $item['img'] ?>">
       <div class="bnd__cover"></div>
       <p class="bnd__title"><?= $item['title'] ?></p>
-    </li>
+  </a>
   <? endforeach; ?>
 </ul>
 
@@ -106,6 +106,7 @@ $brands = [
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 
   color: white;
   font-size: 40px;
