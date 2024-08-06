@@ -12,8 +12,25 @@ $title = [
   'onhover' => false,
 ];
 
+$arrContextOptions=array(
+  "ssl"=>array(
+      "verify_peer"=>false,
+      "verify_peer_name"=>false,
+  ),
+);  
 
-$productsFile = file_get_contents("{$themeFolder}/mocks/testProducts.json");
+
+// $productsFile = file_get_contents("{$themeFolder}/mocks/testProducts.json");
+
+$arrContextOptions=array(
+  "ssl" => [
+    "verify_peer"=>false,
+    "verify_peer_name"=>false,
+  ],
+);  
+
+$productsFile = file_get_contents("{$themeFolder}/mocks/testProducts.json", false, stream_context_create($arrContextOptions));
+
 $products = json_decode($productsFile);
 
 ?>

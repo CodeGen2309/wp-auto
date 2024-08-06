@@ -142,6 +142,14 @@ body {
   height: 70vh;
 }
 
+@media (width < 1100px) {
+  .tiles__holder {
+    height: 140vh;
+  }  
+
+}
+
+
 
 @media (width < 500px) {
   .cat__bullet {
