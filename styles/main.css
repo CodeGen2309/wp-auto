@@ -47,17 +47,8 @@
 
 
 .bullet__search {
-  position: relative;
-  display: flex;
-  box-sizing: border-box;
-
   width: 500px;
   max-width: 100%;
-
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 30px auto;
 }
 
 
