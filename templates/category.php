@@ -15,6 +15,7 @@
   $thumb_id = get_term_meta( $cat -> term_id, 'thumbnail_id', true);
   $thumb_link = wp_get_attachment_image_url( $thumb_id, 'full');
   $title = $cat -> name;
+  $desc = $cat -> description;
 
 ?>
 
@@ -25,9 +26,7 @@
 	<div class="cat__cover"></div>
 	
 	<h1 class="cat__title"><?= $title ?></h1>
-	<p class="cat__footNote">
-		Здесь будет описание брэнда
-	</p>
+	<p class="cat__footNote"><?= $desc ?></p>
 
   <label class="cat__search">
     <img class="cat__searchIcon" src="<?= $iconsFolder ?>/search.png">
@@ -41,17 +40,12 @@
 </section>
 
 
-<? get_template_part( 'parts/hots' ) ?>
-<? get_template_part( 'parts/hots' ) ?>
-<? get_template_part( 'parts/hots' ) ?>
-<? get_template_part( 'parts/hots' ) ?>
+<? get_template_part( 'parts/hots', null, ['cat_id' => 30] ) ?>
+<? get_template_part( 'parts/hots', null, ['cat_id' => 27] ) ?>
+<? get_template_part( 'parts/hots', null, ['cat_id' => 28] ) ?>
 
 
 <style>
-body {
-  color: white;
-}
-
 .cat__bullet {
   position: fixed;
   padding: 20px;

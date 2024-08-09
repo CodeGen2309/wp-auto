@@ -2,7 +2,11 @@
 $themeFolder = get_template_directory_uri();
 $iconsFolder = "{$themeFolder}/icons";
 
-$text = isset($args['text'])? $args['text'] : 'rapapap';
+
+
+$cat_id = isset($args['cat_id'])? $args['cat_id'] : 30;
+$cat = get_term_by( 'id', $cat_id, 'product_cat');
+$text = $cat -> name;
 
 
 $title = [
@@ -12,26 +16,38 @@ $title = [
   'onhover' => false,
 ];
 
-$arrContextOptions=array(
-  "ssl"=>array(
-      "verify_peer"=>false,
-      "verify_peer_name"=>false,
-  ),
-);  
 
-
-// $productsFile = file_get_contents("{$themeFolder}/mocks/testProducts.json");
-
-$arrContextOptions=array(
-  "ssl" => [
-    "verify_peer"=>false,
-    "verify_peer_name"=>false,
+$query_args = array(
+  'post_type' => 'product',
+  'fields' => 'id',
+  'tax_query' => [
+    [
+      'taxonomy' => 'product_cat',
+      'field' => 'slug',
+      'terms' => $cat -> slug, 
+    ]
   ],
-);  
+); 
 
-$productsFile = file_get_contents("{$themeFolder}/mocks/testProducts.json", false, stream_context_create($arrContextOptions));
 
-$products = json_decode($productsFile);
+$the_query = new WP_Query( $query_args );
+
+$prodList = [];
+foreach ($the_query -> posts as $post) {
+  $id = $post -> ID;
+  $postTitle = $post -> post_title;
+  $img = get_the_post_thumbnail_url($id, 'full');
+  $prodItem = wc_get_product($id);
+  $price = $prodItem -> price;
+
+  $prodList[] = [
+    'id' => $id,
+    'title' => $postTitle,
+    'img' => $img,
+    'price' => $price,
+  ];
+};
+
 
 ?>
 
@@ -41,19 +57,13 @@ $products = json_decode($productsFile);
   </div>
 
   <ul class="hots__list">
-    <? foreach ($products as $item): ?>
-      <?
-        $img = "{$themeFolder}/{$item -> image}";
-        $title = $item -> title;
-        $price = $item -> price;
-      ?>
-
+    <? foreach ($prodList as $item): ?>
       <li class="hots__listItem">
         <div class="hots__listCover">
-          <img class="hots__listImg" src="<?= $img ?>">
-          <p class="hots__listPrice"><?= $price ?>₽</p>  
+          <img class="hots__listImg" src="<?= $item['img'] ?>">
+          <p class="hots__listPrice"><?= $item['price'] ?>₽</p>  
         </div>
-        <p class="hots__listTitle"><?= $title ?></p>
+        <p class="hots__listTitle"><?= $item['title'] ?></p>
         <a class="hots__listBuy" href="#">В корзину</a>
       </li>
     <? endforeach; ?>
@@ -100,12 +110,13 @@ $products = json_decode($productsFile);
 .hots__listCover {
   position: relative;
   width: 200px; height: 250px;
+  background: white;
 }
 
 
 .hots__listImg {
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 2px;
 }
@@ -139,6 +150,12 @@ $products = json_decode($productsFile);
 .hots__listTitle {
   font-size: 21px;
   font-weight: 100;
+  max-width: 300px;
+  max-height: 60px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hots__listBuy {
