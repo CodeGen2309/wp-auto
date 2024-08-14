@@ -6,16 +6,16 @@
 ?>
 
 <? 
-  $imgFolder = get_template_directory_uri(). '/img';
+  $imgFolder   = get_template_directory_uri(). '/img';
   $iconsFolder = get_template_directory_uri(). '/icons';
-  $brand = $_GET['brand'];
+  $brand       = $_GET['brand'];
 
   
-  $cat = get_term_by( 'slug', $brand, 'product_cat');
-  $thumb_id = get_term_meta( $cat -> term_id, 'thumbnail_id', true);
+  $cat        = get_term_by( 'slug', $brand, 'product_cat');
+  $thumb_id   = get_term_meta( $cat -> term_id, 'thumbnail_id', true);
   $thumb_link = wp_get_attachment_image_url( $thumb_id, 'full');
-  $title = $cat -> name;
-  $desc = $cat -> description;
+  $title      = $cat -> name;
+  $desc       = $cat -> description;
 
 ?>
 

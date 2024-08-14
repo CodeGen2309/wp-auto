@@ -97,6 +97,35 @@ let createInner = () => {
   return inner
 }
 
+
+let createProduct = (text, src) => {
+  let item, img, title, button
+
+  item = document.createElement('div')
+  item.classList.add('product')
+
+  img = document.createElement('img')
+  img.setAttribute('src', src)
+  img.classList.add('product__img')
+
+  title = document.createElement('p')
+  title.innerText = text
+  title.classList.add('product__title')
+
+  button = document.createElement('a')
+  button.classList.add('product__buy')
+  button.innerText = 'Добавить в корзину'
+  
+
+  item.append(img)
+  item.append(title)
+  item.append(button)
+
+  return item
+}
+
+
+
 let getCoords = elem => {
   let box = elem.getBoundingClientRect();
 
@@ -125,17 +154,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   input.addEventListener('input', () => {
     let text = input.value
 
+    if (container != null) {
+      document.body.removeChild(container)
+      container = null
+    }
+
+
     if (text.length < 7) { return false}
 
     console.log('changed');
     clearTimeout(timeout)
     
     timeout = setTimeout(async () => {
-      if (container != null) {
-        document.body.removeChild(container)
-        container = null
-      }
-
       rect = getCoords(holder)
       container = createContainer(
         rect.bottom, rect.left, rect.width
@@ -143,9 +173,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       search = await niraxSearch(input.value)
       data = search.data
-      console.log({data})
 
-      container.append(JSON.stringify(data))
+      for (item of data) {
+        let prod = createProduct(
+          item.NormalizedDescription,
+          item.FileImageFull, 
+        )
+
+        container.append(prod)
+      }
+
+
+      // container.append(JSON.stringify(data))
       document.body.append(container)
     }, 1000);
     
@@ -205,6 +244,40 @@ document.addEventListener('DOMContentLoaded', async () => {
   animation: fadeDown .3s linear both;
   transition: .3s;
 }
+
+.product {
+  display: flex;
+  gap: 10px;
+}
+
+.product__img {
+  width: 150px;
+  height: 50px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.product__title {
+  /* font-size: 21px; */
+  margin: 0; padding: 0;
+}
+
+.product__buy {
+  background: rgba(34, 124, 133, 1);
+  color: white;
+  border-radius: 10px;
+  padding: 4px 10px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.product__buy:hover {
+  background: rgba(34, 124, 133, .7);
+}
+
 
 @keyframes fadeDown {
   0% {

@@ -30,10 +30,13 @@
     <br><br>    
   </div>
 
-  <label class="mBlt__search">
+  <!-- <label class="mBlt__search">
     <img class="mBlt__searchIcon" src="<?= $iconsFolder ?>/search.png">
     <input type="text" class="mBlt__searchInput">
-  </label>
+  </label> -->
+
+  <?= do_shortcode('[fibosearch]'); ?>
+
   
 </section>
 
