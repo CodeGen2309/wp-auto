@@ -115,13 +115,14 @@ $tiles = isset($args['tiles'])? $args['tiles'] : $mocks;
 .tiles__title {
 }
 
+
 @media (width < 1100px) {
   .tiles {
     grid-template-columns: 1fr 1fr;
     min-height: max-content;
   }  
-
 }
+
 
 
 

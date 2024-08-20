@@ -91,7 +91,7 @@ foreach ($the_query -> posts as $post) {
 .hots__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 
   list-style: none;
   padding: 40px 20px;
@@ -109,7 +109,8 @@ foreach ($the_query -> posts as $post) {
 
 .hots__listCover {
   position: relative;
-  width: 200px; height: 250px;
+  height: 250px;
+  /* width: 200px;  */
   background: white;
 }
 

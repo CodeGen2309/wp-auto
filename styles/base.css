@@ -7,3 +7,20 @@ body {
 }
 
 
+.cart_dark {
+	background: rgba(255, 255, 255, .7);
+	margin: 40px;
+}
+
+.cart_dark a {
+	color: black;
+	text-decoration: none;
+}
+
+.cart__disabled {
+	display: none;
+}
+
+.order_dark {
+	background: rgba(255, 255, 255, .7);
+}

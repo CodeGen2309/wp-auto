@@ -242,3 +242,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <? get_footer() ?>
+</body>
+</html>
