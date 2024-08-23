@@ -8,6 +8,7 @@ class autosfera {
 
     add_action('wp_enqueue_scripts', [$this, 'loadScripts']);
     add_action('wp_enqueue_scripts', [$this, 'loadStyles']);
+
     add_action('after_setup_theme',  [$this, 'loadMenu']);
     add_action('admin_menu',  [$this, 'createImportMenu']);
 
@@ -18,16 +19,27 @@ class autosfera {
     $title = "Импорт картинок";
     $slug = "imgimport";
 
-
-
     add_menu_page($title, $title, 'manage_options', $slug, [$this, 'importPage'], '', 100 );
   }
 
 
   function importPage ()  {
-    echo "
-      <h1>EPTA TEST</h1>
-    ";
+    $args = [
+      'post_type' => ['product'],
+      'post_status' => ['publish'],
+      'nopaging' => true,
+    ];
+    
+    // The Query
+    $query = new WP_Query( $args );
+    $data = serialize($query);
+    
+    print_r("
+      <h1>EPSTA TEST</h1>
+      <pre>{$data}</pre>
+
+      <script>console.log('EPTA  TEEEEEEST')</script>
+    ");
   }
 
 
