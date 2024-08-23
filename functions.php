@@ -1,6 +1,7 @@
 <?
 defined('ABSPATH') or die();
 
+
 class autosfera {
   function __construct () {
     $this -> themeFolder = get_template_directory_uri();
@@ -8,8 +9,25 @@ class autosfera {
     add_action('wp_enqueue_scripts', [$this, 'loadScripts']);
     add_action('wp_enqueue_scripts', [$this, 'loadStyles']);
     add_action('after_setup_theme',  [$this, 'loadMenu']);
+    add_action('admin_menu',  [$this, 'createImportMenu']);
 
     add_theme_support( 'post-thumbnails' );
+  }
+
+  function createImportMenu () {
+    $title = "Импорт картинок";
+    $slug = "imgimport";
+
+
+
+    add_menu_page($title, $title, 'manage_options', $slug, [$this, 'importPage'], '', 100 );
+  }
+
+
+  function importPage ()  {
+    echo "
+      <h1>EPTA TEST</h1>
+    ";
   }
 
 
